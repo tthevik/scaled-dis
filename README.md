@@ -8,7 +8,6 @@ Dette er for at simulere en meget stort/langsom arbejdsopgave som serveren skal 
 1. Klon og åben dette projekt på din computer (se detaljeret beskrivelse under Opgave 1 her https://github.com/Distribuerede-Systemer-2017/simple-java-dis/tree/master)
 2. Lav et request i din browser
 3. Inspicer hvor lang tid requestet tager
-4. Prøv at ændre `Thread.sleep()` til et højere eller lavere tal og se effekten (OBS tallet er i millisekunder)
 
 #### 2. Opgave
 For at teste hvad den langsomme svartid rent faktisk har på et stort DIS (dvs. meget trafik), er vi nødt til at simulere mange request på serveren.
