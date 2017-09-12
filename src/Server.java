@@ -41,7 +41,9 @@ public class Server {
                 outToClient.println("");
 
                 //Content
-                Thread.sleep(4000);
+                for (double i = 0; i < 999999999; i++){
+
+                }
 
                 //Flush and Close
                 outToClient.flush();
