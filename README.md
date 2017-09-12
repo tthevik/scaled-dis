@@ -15,6 +15,7 @@ En nem måde at gøre dette på er ved at installere en load tester.
 
 Jeg har desværre kun kendskab til et værktøj som virker på Mac, så har du en PC  er du selvfølgelig velkommen til at lave din egen 
 research på Google, ellers find en kammerat med en Mac og lave resten af denne opgave med.
+Alternativt kan Mac'en køre Siege i mens PC'en kører serveren.
 
 1. Naviger til den mappe hvor du vil have installationsfilerne. F.eks.: `cd /Downloads`
 2. Eksekver følgende i din terminal
