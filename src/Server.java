@@ -45,6 +45,8 @@ public class Server {
 
                 }
 
+                outToClient.println("Hello world!");
+
                 //Flush and Close
                 outToClient.flush();
                 outToClient.close();
