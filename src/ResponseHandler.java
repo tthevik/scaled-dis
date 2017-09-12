@@ -38,8 +38,9 @@ public class ResponseHandler implements Runnable {
             outToClient.println("Server: Hackerbot");
             outToClient.println("");
 
-            Thread.sleep(4000);
+            for (double i = 0; i < 999999999; i++){
 
+            }
             outToClient.println("Hello world!");
 
             //Flush'n'close
@@ -47,8 +48,6 @@ public class ResponseHandler implements Runnable {
 
             outToClient.close();
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
