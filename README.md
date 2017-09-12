@@ -52,3 +52,8 @@ Prøv at leg rundt med de forskellige indstillinger og se hvor godt din server p
 
 - Hvor mange transactions?
 - Hvor høj er jeres nye transactions rate?
+
+#### 4. Opgave
+- Hvad skyldes forskellen? Hvorfor performer den ene server bedre end den anden?
+- Er dette horisontalt eller vertikal skalering?
+- Er dette er realistisk testmiljø? Hvilke faktorer kan måske give en forkert test?
