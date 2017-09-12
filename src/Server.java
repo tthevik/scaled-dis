@@ -28,7 +28,7 @@ public class Server {
                 String str = ".";
                 while (!str.equals("")) {
                     str = inFromClient.readLine();
-                    System.out.println(str);
+                    //System.out.println(str);
                 }
 
                 //Create output stream (to client)
@@ -41,7 +41,7 @@ public class Server {
                 outToClient.println("");
 
                 //Content
-                outToClient.println("Hello World!");
+                Thread.sleep(4000);
 
                 //Flush and Close
                 outToClient.flush();
@@ -52,6 +52,8 @@ public class Server {
             }
 
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
