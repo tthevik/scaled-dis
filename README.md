@@ -46,7 +46,7 @@ Prøv at leg rundt med de forskellige indstillinger og se hvor godt din server p
 - Hvor mange transactions kan jeres dis lave på 20 sekunder?
 - Hvor høj er jeres transaction rate?
 
-#### 2. Opgave
+#### 3. Opgave
 1. Skift branch til `thread`
 2. Udfør step 9., 10. og 11. igen
 3. Sammenlign resultaterne
