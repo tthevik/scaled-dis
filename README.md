@@ -48,3 +48,8 @@ Prøv at leg rundt med de forskellige indstillinger og se hvor godt din server p
 
 #### 2. Opgave
 1. Skift branch til `thread`
+2. Udfør step 9., 10. og 11. igen
+3. Sammenlign resultaterne
+
+- Hvor mange transactions?
+- Hvor høj er jeres nye transactions rate?
