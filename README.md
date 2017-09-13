@@ -1,7 +1,7 @@
 ## Skaleret DIS
 Lad os prøve at stresse vores DIS og se hvor godt det egentligt performer.
 
-I denne udgave af samme kode som fra 2. øvelsesgang har jeg indlagt 4 sekunders ventetid på den tråd som eksekverer programmet.
+I denne udgave af samme kode som fra 2. øvelsesgang har jeg indlagt en meget lang for-loop på den tråd som eksekverer programmet.
 Dette er for at simulere en meget stort/langsom arbejdsopgave som serveren skal lave, inden den kan returnere til klienten.
 
 #### 1. Opgave
