@@ -22,9 +22,9 @@ Alternativt kan Mac'en køre Siege i mens PC'en kører serveren.
 3. `curl -C - -O http://download.joedog.org/siege/siege-latest.tar.gz`
 4. `tar -xvf siege-latest.tar.gz`
 5. `cd siege-4.0.4/`
-6. `./configure`
-7. `make`
-8. `make install`
+6. `sudo ./configure`
+7. `sudo make`
+8. `sudo make install`
 
 Luk din terminal (CMD+Q) og åbn den igen. 
 Skriv `siege -V`. Din terminal skulle gerne vise dig noget lignende: `SIEGE 4.0.4`  
