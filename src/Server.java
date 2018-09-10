@@ -1,63 +1,65 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Server {
 
     private static int PORT = 31337;
+    private static ArrayList<String> cache = new ArrayList<>();
 
-    public static void main(String args[]) {
+    private static String getElement(String element) {
+        for (String s : cache) {
+            //implement your string comparison method.
+            //if the strings match return it.
+        }
+        // This loop is just to simulate time passing.
+        // It could be a really complex call to a remote database.
+        for (double i = 0; i < 999999999; i++) {}
 
+
+        //do something here as well
+
+
+        return element;
+    }
+
+    public static void main(String[] args) throws IOException {
+        ServerSocket listener = new ServerSocket(PORT);
         try {
-
-            ServerSocket serverSocket = new ServerSocket(PORT);
-
             while (true) {
-
                 System.out.println("Waiting for client ...");
 
-                Socket connectionSocket = serverSocket.accept();
+                Socket socket = listener.accept();
+                try {
+                    BufferedReader inFromClient =
+                            new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                BufferedReader inFromClient =
-                        new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+                    DataOutputStream outToClient =
+                            new DataOutputStream(socket.getOutputStream());
 
-                //Print request headers from client
-                String str = ".";
-                while (!str.equals("")) {
-                    str = inFromClient.readLine();
-                    //System.out.println(str);
+                    String clientSentence = inFromClient.readLine();
+                    System.out.println("Received: " + clientSentence);
+
+                    //stopwatch
+                    long startTime = System.nanoTime();
+
+                    //Capitalize string received from server and return to client as response
+                    String serverResponse = getElement(clientSentence);
+
+                    long endTime = System.nanoTime();
+                    long duration = (endTime - startTime)/1000;
+
+                    outToClient.writeBytes("Getting the " + serverResponse + " element took " + duration + "ms ");
+
+                } finally {
+                    socket.close();
                 }
 
-                //Create output stream (to client)
-                PrintWriter outToClient = new PrintWriter(connectionSocket.getOutputStream());
-
-                //Write response headers
-                outToClient.println("HTTP/1.0 200 OK");
-                outToClient.println("Content-Type: text/plain");
-                outToClient.println("Server: Cowboy");
-                outToClient.println("");
-
-                //Content
-                for (double i = 0; i < 999999999; i++){
-
-                }
-
-                outToClient.println("Hello world!");
-
-                //Flush and Close
-                outToClient.flush();
-                outToClient.close();
-
-                //Close socket response
-                connectionSocket.close();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-
+        finally {
+            listener.close();
+        }
     }
 }
