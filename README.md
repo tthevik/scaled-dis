@@ -5,7 +5,7 @@ I denne udgave af samme kode som fra 2. øvelsesgang har jeg indlagt en meget la
 Dette er for at simulere en meget stort/langsom arbejdsopgave som serveren skal lave, inden den kan returnere til klienten.
 
 #### 1. Opgave
-1. Klon og åben dette projekt på din computer (se detaljeret beskrivelse under Opgave 1 her https://github.com/Distribuerede-Systemer-2017/simple-java-dis/tree/master)
+1. Klon og åben dette projekt på din computer (se detaljeret beskrivelse under Opgave 1 her: https://github.com/Voldemorten/simple-java-dis
 2. Lav et request i din browser
 3. Inspicer hvor lang tid requestet tager
 
