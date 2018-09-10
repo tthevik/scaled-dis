@@ -21,7 +21,7 @@ Hvis i ønsker at kommunikere med hinandens computere, skal i slå jeres firewal
 
 Installer Siege:
 Mac med homebrew skriver bare: "brew install siege".
-Windows følger følgende trin:
+Alternativt:
 1. Naviger til den mappe hvor du vil have installationsfilerne. F.eks.: `cd /Downloads`
 2. Eksekver følgende i din terminal
 3. `curl -C - -O http://download.joedog.org/siege/siege-latest.tar.gz`
