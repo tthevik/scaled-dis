@@ -63,3 +63,11 @@ Prøv at leg rundt med de forskellige indstillinger og se hvor godt din server p
 - Hvad skyldes forskellen? Hvorfor performer den ene server bedre end den anden?
 - Er dette horisontalt eller vertikal skalering?
 - Er dette er realistisk testmiljø? Hvilke faktorer kan måske give en forkert test?
+
+#### 5. Opgave (Hvis der er tid)
+I branchen `caching` er der implementeret en halvfærdig simpel caching funktion som simulere et meget langsomt kald til en remote database
+Metoden `getElement` skal modificeres, så den ikke ryger ind i det lange for-loop, hvis elementet er blevet søgt på en gang.
+
+- Hvad er tidsforskellen på den cachede version og første gang man forsøger at hente et element.
+- Hvor mange iterationer drejer det sig om?
+ 
