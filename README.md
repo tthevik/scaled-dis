@@ -17,6 +17,11 @@ Jeg har desværre kun kendskab til et værktøj som virker på Mac, så har du e
 research på Google, ellers find en kammerat med en Mac og lave resten af denne opgave med.
 Alternativt kan Mac'en køre Siege i mens PC'en kører serveren.
 
+Hvis i ønsker at kommunikere med hinandens computere, skal i slå jeres firewall fra. Sikre jer at i er på samme lokale netværk, og så find jeres lokale ip-adresse (starter med 192.168) og så indtaste denne efterfulgt af portnummeret. Ex "http://192.168.1.140:31337/"
+
+Installer Siege:
+Mac med homebrew skriver bare: "brew install siege".
+Windows følger følgende trin:
 1. Naviger til den mappe hvor du vil have installationsfilerne. F.eks.: `cd /Downloads`
 2. Eksekver følgende i din terminal
 3. `curl -C - -O http://download.joedog.org/siege/siege-latest.tar.gz`
