@@ -11,13 +11,13 @@ public class Server {
     private static String getElement(String element) {
         for (String s : cache) {
             //implement your string comparison method.
-
+            if (s.equals(element)) return s;
         }
         // This loop is just to simulate time passing.
         // It could be a really complex call to a remote database.
         for (double i = 0; i < 999999999; i++) {}
 
-
+        cache.add(element);
         //do something here as well
 
 

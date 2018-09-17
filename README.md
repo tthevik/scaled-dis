@@ -5,7 +5,7 @@ I denne udgave af samme kode som fra 2. øvelsesgang har jeg indlagt en meget la
 Dette er for at simulere en meget stort/langsom arbejdsopgave som serveren skal lave, inden den kan returnere til klienten.
 
 #### 1. Opgave
-1. Klon og åben dette projekt på din computer (se detaljeret beskrivelse under Opgave 1 her https://github.com/Distribuerede-Systemer-2017/simple-java-dis/tree/master)
+1. Klon og åben dette projekt på din computer
 2. Lav et request i din browser
 3. Inspicer hvor lang tid requestet tager
 
@@ -17,11 +17,11 @@ Jeg har desværre kun kendskab til et værktøj som virker på Mac, så har du e
 research på Google, ellers find en kammerat med en Mac og lave resten af denne opgave med.
 Alternativt kan Mac'en køre Siege i mens PC'en kører serveren.
 
-Hvis i ønsker at kommunikere med hinandens computere, skal i slå jeres firewall fra. Sikre jer at i er på samme lokale netværk, og så find jeres lokale ip-adresse (starter med 192.168) og så indtaste denne efterfulgt af portnummeret. Ex "http://192.168.1.140:31337/"
+Hvis i ønsker at kommunikere med hinandens computere, skal i slå jeres firewall fra, sikre jer at i er på samme lokale netværk, og så find jeres lokale ip-adresse (starter med 192.168) og så indtaste denne efterfulgt af portnummeret. Ex "http://192.168.1.140:31337/"
 
 Installer Siege:
 Mac med homebrew skriver bare: "brew install siege".
-Windows følger følgende trin:
+Alternativt:
 1. Naviger til den mappe hvor du vil have installationsfilerne. F.eks.: `cd /Downloads`
 2. Eksekver følgende i din terminal
 3. `curl -C - -O http://download.joedog.org/siege/siege-latest.tar.gz`
@@ -50,6 +50,20 @@ Prøv at leg rundt med de forskellige indstillinger og se hvor godt din server p
 
 - Hvor mange transactions kan jeres dis lave på 20 sekunder?
 - Hvor høj er jeres transaction rate?
+    
+        Lifting the server siege...
+        Transactions: 5 hits
+        Availability: 100.00 %
+        Elapsed time: 19.87 secs
+        Data transferred: 0.00 MB
+        Response time: 9.98 secs
+        Transaction rate: 0.25 trans/sec
+        Throughput: 0.00 MB/sec
+        Concurrency: 2.51
+        Successful transactions: 5
+        Failed transactions: 0
+        Longest transaction: 16.82
+        Shortest transaction: 0.00
 
 #### 3. Opgave
 1. Skift branch til `thread`
@@ -59,7 +73,45 @@ Prøv at leg rundt med de forskellige indstillinger og se hvor godt din server p
 - Hvor mange transactions?
 - Hvor høj er jeres nye transactions rate?
 
+        Lifting the server siege...
+        Transactions:		          29 hits
+        Availability:		      100.00 %
+        Elapsed time:		       19.97 secs
+        Data transferred:	        0.00 MB
+        Response time:		        6.23 secs
+        Transaction rate:	        1.45 trans/sec
+        Throughput:		        0.00 MB/sec
+        Concurrency:		        9.05
+        Successful transactions:          29
+        Failed transactions:	           0
+        Longest transaction:	       10.43
+        Shortest transaction:	        3.83
+
 #### 4. Opgave
 - Hvad skyldes forskellen? Hvorfor performer den ene server bedre end den anden?
+
+//Flere tråde kan håndtere flere klienter. Obs vær opmærksom på race-conditions og the lost update problem
 - Er dette horisontalt eller vertikal skalering?
+
+//Horisontal skalering er flere computere. Vertikal skalering er mere computerkraft (hence det her er vertikalt)
 - Er dette er realistisk testmiljø? Hvilke faktorer kan måske give en forkert test?
+
+//Vi kører på localhost, dvs nærmest alt er forkert i forhold til en realistisk webside
+//JVM laver en gang i mellem nogle mærkelige optimeringsting, vi ikke har kontrol over. Hvis det java optimerer det "simulerede" loop, så er dette endnu mindre realistisk
+
+#### 5. Opgave (Hvis der er tid)
+I branchen `caching` er der implementeret en halvfærdig simpel caching funktion som simulere et meget langsomt kald til en remote database
+Metoden `getElement` skal modificeres, så den ikke ryger ind i det lange for-loop, hvis elementet er blevet søgt på en gang.
+
+- Hvad er tidsforskellen på den cachede version og første gang man forsøger at hente et element.
+        
+        Client Input:
+        test
+        Received from server:Getting the test element took 3326450ms 
+        
+        Client Input:
+        test
+        Received from server:Getting the test element took 75ms 
+        
+- Hvor mange iterationer drejer det sig om?
+//når den er cached, så søger den kun i antallet af i forvejen søgte elementer. Hvis den ikke findes ryger den ind i det lange for-loop 
