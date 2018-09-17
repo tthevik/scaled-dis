@@ -5,7 +5,7 @@ I denne udgave af samme kode som fra 2. øvelsesgang har jeg indlagt en meget la
 Dette er for at simulere en meget stort/langsom arbejdsopgave som serveren skal lave, inden den kan returnere til klienten.
 
 #### 1. Opgave
-1. Klon og åben dette projekt på din computer (se detaljeret beskrivelse under Opgave 1 her: https://github.com/Voldemorten/simple-java-dis)
+1. Klon og åben dette projekt på din computer
 2. Lav et request i din browser
 3. Inspicer hvor lang tid requestet tager
 
@@ -50,6 +50,20 @@ Prøv at leg rundt med de forskellige indstillinger og se hvor godt din server p
 
 - Hvor mange transactions kan jeres dis lave på 20 sekunder?
 - Hvor høj er jeres transaction rate?
+    
+        Lifting the server siege...
+        Transactions: 5 hits
+        Availability: 100.00 %
+        Elapsed time: 19.87 secs
+        Data transferred: 0.00 MB
+        Response time: 9.98 secs
+        Transaction rate: 0.25 trans/sec
+        Throughput: 0.00 MB/sec
+        Concurrency: 2.51
+        Successful transactions: 5
+        Failed transactions: 0
+        Longest transaction: 16.82
+        Shortest transaction: 0.00
 
 #### 3. Opgave
 1. Skift branch til `thread`
