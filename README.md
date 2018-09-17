@@ -73,10 +73,31 @@ Prøv at leg rundt med de forskellige indstillinger og se hvor godt din server p
 - Hvor mange transactions?
 - Hvor høj er jeres nye transactions rate?
 
+        Lifting the server siege...
+        Transactions:		          29 hits
+        Availability:		      100.00 %
+        Elapsed time:		       19.97 secs
+        Data transferred:	        0.00 MB
+        Response time:		        6.23 secs
+        Transaction rate:	        1.45 trans/sec
+        Throughput:		        0.00 MB/sec
+        Concurrency:		        9.05
+        Successful transactions:          29
+        Failed transactions:	           0
+        Longest transaction:	       10.43
+        Shortest transaction:	        3.83
+
 #### 4. Opgave
 - Hvad skyldes forskellen? Hvorfor performer den ene server bedre end den anden?
+
+//Flere tråde kan håndtere flere klienter. Obs vær opmærksom på race-conditions og the lost update problem
 - Er dette horisontalt eller vertikal skalering?
+
+//Horisontal skalering er flere computere. Vertikal skalering er mere computerkraft (hence det her er vertikalt)
 - Er dette er realistisk testmiljø? Hvilke faktorer kan måske give en forkert test?
+
+//Vi kører på localhost, dvs nærmest alt er forkert i forhold til en realistisk webside
+//JVM laver en gang i mellem nogle mærkelige optimeringsting, vi ikke har kontrol over. Hvis det java optimerer det "simulerede" loop, så er dette endnu mindre realistisk
 
 #### 5. Opgave (Hvis der er tid)
 I branchen `caching` er der implementeret en halvfærdig simpel caching funktion som simulere et meget langsomt kald til en remote database
